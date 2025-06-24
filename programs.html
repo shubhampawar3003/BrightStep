@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Programs - Brightstep Education</title>
+    <link href="programs.css" rel="stylesheet">
+</head>
+
+<body>
+     <header>
+        <div class="logo-section">
+            <img src="logo.jpeg" alt="Brightstep Logo" class="logo">
+            <h1>Brightstep Education</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="programs.html">Programs</a>
+            <a href="#" onclick="document.getElementById('popupForm').style.display='block'">Apply Now</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="cta-section">
+            <a href="https://forms.gle/YOUR_FORM_LINK" target="_blank" class="cta-button">
+                Speak with Counsellor
+            </a>
+            <p style="margin: 0;">
+                📞 <a href="tel:+919022330753" class="phone-link">+91 98765 43210</a>
+            </p>
+        </div>
+
+    </header>
+
+    <section class="about-banner-section">
+        <div class="about-banner-container">
+            <div class="about-content">
+                <h2>Programs We Offer</h2>
+                <p>At <strong>Brightstep Education</strong>, we offer a wide range of career-focused programs through
+                    accredited universities. Whether you’re starting your journey or advancing your expertise — we’ve
+                    got you covered:</p>
+                <ul>
+                    <li>🎓 Undergraduate Degrees (B.A., B.Com, B.Sc., BBA, BCA, B.Tech, B.Arch, etc.)</li>
+                    <li>🎓 Postgraduate Degrees (M.A., M.Com, M.Sc., MBA, MCA, etc.)</li>
+                    <li>📈 Specialized MBA Programs (Marketing, HR, IT, FinTech, AI, etc.)</li>
+                    <li>📜 Professional Certificate Courses (Digital Marketing, HR, Finance Basics)</li>
+                    <li>🤝 100% Support from Admission to Degree Completion</li>
+                </ul>
+            </div>
+            <div class="about-banner-image">
+                <img src="graduation-6840941_1920.png" alt="Brightstep About Banner">
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="logo.jpeg" alt="Brightstep Logo" style="height: 60px; margin-bottom: 1rem;" />
+                <p>Brightstep Education is committed to transforming dreams into careers through flexible and
+                    future-ready learning.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><strong>Phone:</strong> +91 9022330753</p>
+                <p><strong>Email:</strong> brightstep@gmail.com</p>
+                <p><strong>Office:</strong> Hadapsar, Pune, Maharashtra</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">&copy; 2025 Brightstep Education. All Rights Reserved.</div>
+    </footer>
+
+    <div id="popupForm" class="popup-form">
+        <div class="popup-content">
+            <h2>Enquiry Form</h2>
+            <form onsubmit="sendToWhatsApp(event)">
+                <div class="form-group">
+                    <label for="wa-name">Name:</label>
+                    <input type="text" id="wa-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="wa-phone">Phone:</label>
+                    <input type="text" id="wa-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="wa-message">Message:</label>
+                    <textarea id="wa-message" rows="4"></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn-submit">Send via WhatsApp</button>
+                    <button type="button" onclick="document.getElementById('popupForm').style.display='none'"
+                        class="btn-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById("wa-name").value;
+            const phone = document.getElementById("wa-phone").value;
+            const message = document.getElementById("wa-message").value;
+            const fullMessage = `Name: ${name}%0APhone: ${phone}%0AMessage: ${message}`;
+            const whatsappURL = `https://wa.me/919022330753?text=${fullMessage}`;
+            window.open(whatsappURL, '_blank');
+            document.getElementById('popupForm').style.display = 'none';
+        }
+
+        document.getElementById('popupForm').addEventListener('click', function (e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
